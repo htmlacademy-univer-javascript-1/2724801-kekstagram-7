@@ -11,6 +11,8 @@ const submitButton = form.querySelector('.img-upload__submit');
 const previewImage = form.querySelector('.img-upload__preview img');
 const body = document.body;
 
+const DEFAULT_IMAGE_SRC = 'img/upload-default-image.jpg';
+
 const validateHashtags = (value) => {
   if (!value) {
     return true;
@@ -87,6 +89,7 @@ const showMessage = (template, isError = false) => {
 const resetForm = () => {
   form.reset();
   uploadInput.value = '';
+  previewImage.src = DEFAULT_IMAGE_SRC;
   pristine.reset();
   resetScale();
   resetEffects();
